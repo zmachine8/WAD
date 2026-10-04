@@ -14,7 +14,7 @@ body {
     max-width: 1000px;
     margin: 16px auto;
     padding: 12px 18px;
-    background: #bfbfbf;
+    background: #A38386;
     border-radius: 12px;
 }
 
@@ -58,7 +58,8 @@ body {
 
 .side-panel {
     flex: 1;
-    background: #bfbfbf;
+    background: transparent;
+    border: none;
     border-radius: 12px;
 }
 
@@ -75,16 +76,21 @@ body {
     margin: 0;
 }
 
+/* The post.
+   This creates the background, rounded corners,
+   and space inside the post. */
+
 .post {
     background: #dedede;
     border-radius: 12px;
-    padding: 14px;
+    padding: 15px;
 }
+
+/* The top part of the post.
+   It contains the user's avatar and name.*/
 
 .post-header {
     display: flex;
-    justify-content: space-between;
-    gap: 12px;
     flex-wrap: wrap;
     font-size: 13px;
 }
@@ -93,26 +99,53 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    margin-top: 12px;
+    margin-top: 14px;
     border-radius: 4px;
 }
 
+/*
+   The date is placed below the post text
+   and above the emotion's icon.
+   text-align: right moves the date
+   to the right side of the post.
+*/
+.post time {
+    display: block;
+    text-align: right;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
 /* Child selector: direct paragraph children of a post. */
-.post>p {
+.post > p {
     line-height: 1.5;
     margin-bottom: 8px;
 }
 
 /* Adjacent sibling: a paragraph immediately after an image. */
-.post-image+p {
+.post-image + p {
     margin-top: 10px;
 }
 
-/* General sibling: like icons following a paragraph in the same post. */
-.post p~.like-icon {
-    display: inline-block;
+/*
+   Selects the emotion's icon when it appears
+   after the paragraph inside the same post.
+   The icon is placed on its own line,
+   below the date.
+*/
+.post p ~ .like-icon {
+    background: transparent;
+    border: none;
+    margin-top: 8px; /*the distance between this element and other elements */
     padding: 4px;
-    font-size: 20px;
+    font-size: 15px;
+    border-radius: 4px;
+    
+}
+
+.post p ~ .like-icon:hover,
+.post p ~ .like-icon:focus-visible {
+    background: #7A8B7B;
 }
 
 .site-footer {
