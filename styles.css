@@ -58,8 +58,7 @@ body {
 
 .side-panel {
     flex: 1;
-    background: transparent;
-    border: none;
+    background: #bfbfbf;
     border-radius: 12px;
 }
 
@@ -134,13 +133,14 @@ body {
    below the date.
 */
 .post p ~ .like-icon {
+    color: inherit;
     background: transparent;
     border: none;
-    margin-top: 8px; /*the distance between this element and other elements */
+    margin-top: 8px; /* Space above the like button. */
     padding: 4px;
     font-size: 15px;
     border-radius: 4px;
-    
+
 }
 
 .post p ~ .like-icon:hover,

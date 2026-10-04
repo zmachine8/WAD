@@ -1,6 +1,5 @@
+// Counts are kept only for the current page visit.
 function likePost(button) {
-
-    let likes = button.querySelector("span");
+    const likes = button.querySelector("span");
     likes.textContent = Number(likes.textContent) + 1;
-
 }
