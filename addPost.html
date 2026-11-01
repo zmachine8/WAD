@@ -3,53 +3,64 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>
-            Add Post | PostIt
-        </title>
+        <title>Add Post | PostIt</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <header class="site-header">
             <nav aria-label="Main navigation">
-                <a href="index.html">
-                    Home
-                </a>
-                <a href="addPost.html">
-                    Add Post
-                </a>
+                <a href="index.html">Home</a>
+                <a href="addPost.html">Add Post</a>
             </nav>
-            <a class="profile" href="login.html" aria-label="Log in">
-                👤
-            </a>
+
+            <div class="profile-menu">
+                <button
+                    class="profile-toggle"
+                    type="button"
+                    aria-label="Open profile menu"
+                    aria-expanded="false"
+                    aria-controls="profile-dropdown"
+                >
+                    <img src="assets/profile.svg" alt="" width="40" height="40">
+                </button>
+
+                <div class="profile-dropdown" id="profile-dropdown" hidden>
+                    <p class="profile-name">Reimo Zukker</p>
+                    <p class="profile-email">reimoz@example.com</p>
+                    <a href="login.html">Log out</a>
+                </div>
+            </div>
         </header>
+
         <main class="form-layout">
             <section class="form-card">
-                <h1>
-                    Add a post
-                </h1>
-                <!-- No backend is required: submitting opens the home page. Fields intentionally have no name, so their contents are not placed in the URL. -->
+                <h1>Add a post</h1>
+
+                <!-- This is a static form; submitting returns to the home page. -->
                 <form action="index.html" method="get">
                     <div class="field">
-                        <label for="post-body">
-                            Post body
-                        </label>
-                        <textarea id="post-body" rows="5" placeholder="Write your message">
-                        </textarea>
+                        <label for="post-body">Post body</label>
+                        <textarea
+                            id="post-body"
+                            rows="5"
+                            placeholder="Write your message"
+                        ></textarea>
                     </div>
+
                     <div class="field">
-                        <label for="post-file">
-                            Select file
-                        </label>
+                        <label for="post-file">Select file</label>
                         <input id="post-file" type="file" accept="image/*">
                     </div>
-                    <button type="submit">
-                        Create post
-                    </button>
+
+                    <button type="submit">Create post</button>
                 </form>
             </section>
         </main>
+
         <footer class="site-footer">
-            PostIt · WAD Homework 1
+            PostIt · WAD Homework 2
         </footer>
+
+        <script src="script.js"></script>
     </body>
 </html>

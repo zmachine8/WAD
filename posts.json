@@ -1,0 +1,94 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "author": "Markus",
+      "body": "The lights along the Emajõgi made the walk home worth taking the long way round.",
+      "createdAt": "2026-10-30T20:18:00",
+      "image": "assets/tartu-river-evening.jpg",
+      "imageAlt": "Evening lights and autumn trees reflected in the Emajõgi in Tartu",
+      "likes": 18
+    },
+    {
+      "id": 2,
+      "author": "Kertu",
+      "body": "Finally got the fetch flow straight: request the JSON, wait for the response, parse it, then build the posts in the page.",
+      "createdAt": "2026-10-29T16:42:00",
+      "image": null,
+      "imageAlt": "",
+      "likes": 11
+    },
+    {
+      "id": 3,
+      "author": "Aino",
+      "body": "Coffee and a few pages of notes before the afternoon practical. This little break helped.",
+      "createdAt": "2026-10-28T14:05:00",
+      "image": "assets/tartu-cafe-street.jpg",
+      "imageAlt": "A warm café opening onto a cobbled old-town street in Tartu",
+      "likes": 14
+    },
+    {
+      "id": 4,
+      "author": "Rasmus",
+      "body": "Small win today: the feed is coming from JSON now, so adding another post doesn't mean copying another block of HTML.",
+      "createdAt": "2026-10-27T18:31:00",
+      "image": "assets/study-desk.jpg",
+      "imageAlt": "A study desk with a laptop, notebook, and coffee beside an autumn city window",
+      "likes": 9
+    },
+    {
+      "id": 5,
+      "author": "Liis",
+      "body": "If fetch fails when you open the page as a file, start a local server with python -m http.server. That fixed it for me.",
+      "createdAt": "2026-10-26T12:16:00",
+      "image": null,
+      "imageAlt": "",
+      "likes": 7
+    },
+    {
+      "id": 6,
+      "author": "Markus",
+      "body": "Tartu looked especially calm from the riverbank tonight. I needed the fresh air after sitting at my desk all afternoon.",
+      "createdAt": "2026-10-25T19:54:00",
+      "image": "assets/tartu-river-evening.jpg",
+      "imageAlt": "Tartu riverside buildings and lights reflected in the water at dusk",
+      "likes": 22
+    },
+    {
+      "id": 7,
+      "author": "Kertu",
+      "body": "Used textContent for the post text instead of building HTML strings. The rendering code is much easier to follow now.",
+      "createdAt": "2026-10-24T15:27:00",
+      "image": null,
+      "imageAlt": "",
+      "likes": 8
+    },
+    {
+      "id": 8,
+      "author": "Aino",
+      "body": "Went out for coffee after finishing the first draft of the responsive layout. A good reason to close the laptop for a bit.",
+      "createdAt": "2026-10-23T17:08:00",
+      "image": "assets/tartu-cafe-street.jpg",
+      "imageAlt": "Café tables along a cobbled old-town street in Tartu",
+      "likes": 16
+    },
+    {
+      "id": 9,
+      "author": "Rasmus",
+      "body": "Quick reminder to check the page at phone width too. A layout that looks fine on a laptop can still overflow on mobile.",
+      "createdAt": "2026-10-22T10:43:00",
+      "image": null,
+      "imageAlt": "",
+      "likes": 6
+    },
+    {
+      "id": 10,
+      "author": "Liis",
+      "body": "One more thing checked off. Saving the work now and calling it a day before I find another tiny CSS detail to change.",
+      "createdAt": "2026-10-21T21:02:00",
+      "image": "assets/study-desk.jpg",
+      "imageAlt": "A laptop and handwritten notes on a desk in soft morning light",
+      "likes": 12
+    }
+  ]
+}
