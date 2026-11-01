@@ -1,62 +1,43 @@
-# PostIt - WAD Homework 1
+# PostIt — WAD Homework 2
 
-A responsive three-page website built with HTML5 and CSS for the Web Application Development course at the University of Tartu.
+A static social feed for the Web Application Development course. The home page loads ten post objects from JSON and builds the feed with JavaScript. The project uses plain HTML, CSS, and JavaScript; it has no framework or package dependencies.
 
 ## Run locally
 
-Open `index.html` in a browser, or run the following command from the project folder:
+Run a small web server from this folder so the browser can fetch `posts.json`:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open http://localhost:8000. No additional packages or build step are required.
+Open http://localhost:8000. Fetch requests may be blocked when opening `index.html` directly with a `file://` URL.
 
-## Project structure
+## Project files
 
-| File           | Purpose                                                          |
-| -------------- | ---------------------------------------------------------------- |
-| `index.html`   | Home page with five posts, including image and text-only posts   |
-| `addPost.html` | Form with a post body, image file picker, and Create post button |
-| `login.html`   | Login form with required email and password fields               |
-| `styles.css`   | Shared styles, CSS selectors, and responsive Flexbox layouts     |
-| `script.js`    | JavaScript for the interactive like buttons                      |
-| `assets/`      | Local illustrations used in the posts                            |
+| File | Purpose |
+| --- | --- |
+| `index.html` | Home page and dynamically populated post feed |
+| `posts.json` | Local data source with ten post objects |
+| `script.js` | Profile dropdown, JSON fetch, feed rendering, and like buttons |
+| `styles.css` | Shared layout, feed, profile dropdown, and responsive styles |
+| `addPost.html` | Static add-post form from Homework 1 |
+| `login.html` | Static login form and profile page header |
+| `assets/` | Generated river, café, and study photos, plus the existing profile avatar and illustrations |
 
-## Features
+## Homework 2 data and fetch
 
-* Home and Add Post navigation links with background changes on hover.
-* Five different posts, each containing text, an author icon, a date, and a like button.
-* Interactive like buttons implemented with JavaScript. Clicking a like button finds the `<span>` inside that button and increases its displayed count by one.
-* Login form validation using `required` and `type="email"`.
-* Login and Create post buttons that navigate to `index.html` after submission.
-* Semantic HTML elements, including `header`, `nav`, `main`, `article`, and `footer`.
-* Flexbox layouts and a media query for smaller screens.
+Each object in `posts.json` has an `id`, `author`, `body`, `createdAt`, `image`, `imageAlt`, and `likes` field. `image` can be a local relative path or `null` for a text-only post. The renderer creates each article using DOM methods and assigns user-visible text with `textContent`.
 
-This is a static website. Login does not authenticate users, and submitting a post does not save its text or upload a file. The like count is only changed in the browser and is not stored on a server. Account creation and password recovery links display explanatory notes.
+The active `loadPostsFromLocalFile()` function fetches `./posts.json` and renders the response. In `script.js`, the commented `loadPostsFromOnlineEndpoint()` function demonstrates fetching the hosted JSON for the online-fetch task. The public endpoint is:
 
-## Required CSS selectors
+`https://api.npoint.io/c271491a708e953668cf`
 
-| Selector type    | Example                    | Use                                                           |
-| ---------------- | -------------------------- | ------------------------------------------------------------- |
-| Pseudo-class     | `.site-header nav a:hover` | Changes the navigation link background on hover               |
-| Descendant       | `.site-header nav a`       | Styles navigation links inside the header                     |
-| Child            | `.post > p`                | Styles paragraphs directly inside a post                      |
-| Adjacent sibling | `.post-image + p`          | Sets spacing for text immediately after a post image          |
-| General sibling  | `.post p ~ .like-icon`     | Styles a like icon following a paragraph with the same parent |
+To demonstrate that version, uncomment the function and change the final call from `loadPostsFromLocalFile()` to `loadPostsFromOnlineEndpoint()`. Restore the local call for the submitted version, as required by the brief. Both paths expect the same `{ "posts": [...] }` response shape. The hosted sample data is fictional coursework content.
 
-## Manual checks
+## Interface
 
-* Follow navigation links between all three pages.
-* Check the hover effect on Home and Add Post.
-* Click the like buttons and confirm that the displayed like count increases.
-* Confirm that the home page contains five posts and all images load.
-* Confirm that login submission is blocked when either field is empty or the email is invalid.
-* Confirm that a valid login form and the Create post form navigate to Home.
-* Inspect the layout at desktop and mobile widths using browser developer tools.
-* Validate each HTML file with the [W3C HTML Validator](https://validator.w3.org/).
-* Repeat navigation, image, and like button checks after deployment.
+Click the avatar in the top-right corner to open the profile menu with the demo username, email, and Log out link. Click outside the menu or press Escape to close it. Like counts update for the current page visit only. The login and add-post forms remain static demonstrations and do not authenticate users, save posts, or upload files.
 
-## Deployment
+## Submission notes
 
-The website can be hosted on GitHub Pages directly from the repository root. All page and asset links use relative paths.
+The course brief asks the team to validate the JSON with an online validator, commit work from each team member, push the changes, and deploy the site with GitHub Pages. Keep the local JSON fetch active in the final version. The GitHub Pages source should be the repository root.
