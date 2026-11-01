@@ -20,9 +20,16 @@
                 Add Post
             </a>
         </nav>
-        <a class="profile" href="login.html" aria-label="Log in">
-            👤
-        </a>
+        <div class="profile-menu">
+            <button class="profile-toggle" type="button" aria-label="Open profile menu" aria-expanded="false" aria-controls="profile-dropdown">
+                <img src="assets/profile.svg" alt="" width="40" height="40">
+            </button>
+            <div class="profile-dropdown" id="profile-dropdown" hidden>
+                <p class="profile-name">Reimo Zukker</p>
+                <p class="profile-email">reimoz@example.com</p>
+                <a href="login.html">Log out</a>
+            </div>
+        </div>
     </header>
     <main class="form-layout">
         <section class="form-card login-card">
@@ -59,8 +66,9 @@
         </section>
     </main>
     <footer class="site-footer">
-        PostIt · WAD Homework 1
+        PostIt · WAD Homework 2
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>

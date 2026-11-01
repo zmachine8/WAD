@@ -43,9 +43,82 @@ body {
     background: #e8e8e8;
 }
 
-.profile {
-    font-size: 28px;
-    text-decoration: none;
+.profile-menu {
+    position: relative;
+}
+
+.profile-toggle {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 50%;
+}
+
+.profile-toggle:hover,
+.profile-toggle:focus-visible {
+    background: #d9f0ec;
+    border-color: #234f85;
+}
+
+.profile-toggle img {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.profile-dropdown {
+    position: absolute;
+    z-index: 2;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 220px;
+    padding: 14px;
+    background: #fff;
+    border: 1px solid #c9d7d5;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 14%);
+}
+
+.profile-dropdown[hidden] {
+    display: none;
+}
+
+.profile-dropdown p {
+    margin: 0 0 6px;
+}
+
+.profile-name {
+    font-weight: 700;
+}
+
+.profile-email {
+    color: #555;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.profile-dropdown a {
+    display: inline-block;
+    margin-top: 8px;
+    color: #006587;
+}
+
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.posts-error {
+    padding: 12px;
+    color: #7a1d1d;
+    background: #fff0f0;
+    border: 1px solid #d99494;
+    border-radius: 8px;
 }
 
 .feed-layout {
@@ -83,6 +156,7 @@ body {
     background: #dedede;
     border-radius: 12px;
     padding: 15px;
+    overflow-wrap: anywhere;
 }
 
 /* The top part of the post.
@@ -92,6 +166,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     font-size: 13px;
+    align-items: center;
+    gap: 8px;
 }
 
 .post-image {
@@ -218,7 +294,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:not(.profile-toggle):hover {
     background: #16385f;
 }
 
@@ -260,6 +336,15 @@ button:hover {
     .site-header,
     .site-footer {
         margin: 10px;
+    }
+
+    .site-header {
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .site-header nav a {
+        padding: 10px 8px;
     }
 
     .feed-layout {
