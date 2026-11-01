@@ -1,5 +1,5 @@
 const LOCAL_POSTS_URL = "./posts.json";
-const ONLINE_POSTS_URL = "https://api.npoint.io/c271491a708e953668cf";
+const ONLINE_POSTS_URL = "https://api.npoint.io/000e998a9c52244f956b";
 
 function setupProfileMenu() {
     const profileMenu = document.querySelector(".profile-menu");

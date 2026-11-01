@@ -30,7 +30,7 @@ Each object in `posts.json` has an `id`, `author`, `body`, `createdAt`, `image`,
 
 The active `loadPostsFromLocalFile()` function fetches `./posts.json` and renders the response. In `script.js`, the commented `loadPostsFromOnlineEndpoint()` function demonstrates fetching the hosted JSON for the online-fetch task. The public endpoint is:
 
-`https://api.npoint.io/c271491a708e953668cf`
+`https://api.npoint.io/000e998a9c52244f956b`
 
 To demonstrate that version, uncomment the function and change the final call from `loadPostsFromLocalFile()` to `loadPostsFromOnlineEndpoint()`. Restore the local call for the submitted version, as required by the brief. Both paths expect the same `{ "posts": [...] }` response shape. The hosted sample data is fictional coursework content.
 
