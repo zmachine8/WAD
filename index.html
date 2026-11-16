@@ -1,40 +1,14 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home | PostIt</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header class="site-header">
-            <nav aria-label="Main navigation">
-                <a href="index.html">Home</a>
-                <a href="addPost.html">Add Post</a>
-            </nav>
-            <div class="profile-menu">
-                <button class="profile-toggle" type="button" aria-label="Open profile menu" aria-expanded="false" aria-controls="profile-dropdown">
-                    <img src="assets/profile.svg" alt="" width="40" height="40">
-                </button>
-                <div class="profile-dropdown" id="profile-dropdown" hidden>
-                    <p class="profile-name">Reimo Zukker</p>
-                    <p class="profile-email">reimoz@example.com</p>
-                    <a href="login.html">Log out</a>
-                </div>
-            </div>
-        </header>
-        <main class="feed-layout">
-            <aside class="side-panel" aria-label="Left decorative panel"></aside>
-            <section class="feed" aria-label="Posts">
-                <h1 class="feed-title">Latest posts</h1>
-                <div id="posts-container" class="posts-list" aria-live="polite"></div>
-                <p id="posts-error" class="posts-error" role="alert" hidden></p>
-            </section>
-            <aside class="side-panel" aria-label="Right decorative panel"></aside>
-        </main>
-        <footer class="site-footer">
-            PostIt · WAD Homework 2
-        </footer>
-        <script src="script.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f7f3" />
+    <meta name="description" content="PostIt — a small community feed built with Vue and Vuex." />
+    <title>PostIt | Community feed</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
